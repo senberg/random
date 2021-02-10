@@ -1,0 +1,54 @@
+body{
+    background: white;
+    perspective: 1000px;
+}
+#playingField{
+    position: relative;
+    margin: -200px auto;
+    border: 5px solid black;
+    padding: 0px;
+    transform: rotateX(80deg);
+    background-image: url("images/background.png");
+    height: 1007px;
+    width: 1513px;
+    transform-style: preserve-3d;
+}
+.enemy{
+    position: absolute;
+    left: 583px;
+    top: 450px;
+    transform: translateZ(109px) rotateX(-90deg);
+    width: 345px;
+    height: 217px;
+    content:url("images/enemy.png");
+    padding:0;
+    margin:0;
+    cursor:crosshair;
+}
+#scoreArea{
+    position:absolute;
+    top: 700px;
+    width:100%;
+    text-align: center;
+    font-size: 20px;
+}
+#actionArea{
+    position: absolute;
+    top: 750px;
+    text-align: center;
+    width:100%;
+}
+button{
+    padding:15px 40px;
+}
+#infoArea{
+    position: absolute;
+    top: 200px;
+    text-align: center;
+    width:100%;
+}
+#shootEnemies, #missionFailure, #gameWin{
+    display: none;
+    color: red;
+    font-size: 30px;
+}

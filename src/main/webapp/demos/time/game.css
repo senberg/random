@@ -1,0 +1,27 @@
+body{
+    background: black url("../tank/images/stars.png") repeat;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+#plane{
+    margin: -200px auto;
+    padding: 0px;
+    transform: rotateX(50deg);
+    height: 1007px;
+    width: 1513px;
+    transform-style: preserve-3d;
+}
+
+polygon.hexagon{
+    fill:transparent;
+    stroke:cyan;
+    stroke-width:3;
+    transition: filter .2s;
+    pointer-events: all;
+}
+
+polygon:hover{
+    filter: brightness(1.5);
+    stroke:red;
+}

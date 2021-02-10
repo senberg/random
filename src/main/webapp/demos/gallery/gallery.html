@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link rel="stylesheet" href="gallery.css">
+    <script src="gallery.js"></script>
+    <title>Gallery</title>
+</head>
+<body onload="pageLoaded()">
+    <div id="infoArea">
+        <label id="shootEnemies">Shoot the Tyranids before they reach you!</label>
+        <label id="missionFailure">You got eaten! Try again and set a new highscore!</label>
+        <label id="gameWin">You win the game!</label>
+    </div>
+    <div id="playingField">
+        <img src="images/enemy.png" class="enemy" onclick="startGame()"/>
+    </div>
+    <div id="scoreArea">
+        Highscore: <label id="highscoreLabel">0</label> Score: <label id="scoreLabel">0</label>
+    </div>
+    <div id="actionArea">
+        <button id="startGameButton" onclick="startGame()">Start Game</button>
+    </div>
+</body>
+</html>

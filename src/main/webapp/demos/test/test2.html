@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Adventure Game</title>
+</head>
+<body>
+    <h1 id="locationName"></h1>
+    <img id="locationImage" src="" style="height:300px">
+    <p id="locationDescription"></p>
+    <div id="buttonArea"></div>
+
+    <script>
+        class World{
+            constructor(){
+                this.locations = new Map();
+            }
+
+            addLocation(location){
+                this.locations.set(location.name, location);
+            }
+
+            getLocationByName(name){
+                return this.locations.get(name);
+            }
+        }
+
+        const world = new World();
+
+        class Location{
+            constructor(name, image, description){
+                this.name = name;
+                this.image = image;
+                this.description = description;
+                this.paths = new Map();
+                world.addLocation(this);
+            }
+
+            addPath(location){
+                this.paths.set(location.name, location);
+                location.paths.set(this.name, location);
+            }
+
+            goHere(){
+                document.getElementById("locationName").textContent = this.name;
+                document.getElementById("locationImage").src = this.image;
+                document.getElementById("locationDescription").textContent = this.description;
+                let buttonArea = document.getElementById("buttonArea");
+                buttonArea.textContent = "";
+
+                for(const name of this.paths.keys()){
+                    let button = document.createElement("button");
+                    button.textContent = "Go to " + name;
+                    button.onclick = function(){
+                        world.getLocationByName(name).goHere()
+                    };
+                    buttonArea.appendChild(button);
+                }
+            }
+        }
+
+        const city = new Location("City", "https://i.pinimg.com/564x/17/10/78/171078c85df2630e021355f76fc246fe.jpg", "You are in a large city filled with crazy people.");
+        const harbor = new Location("Harbor", "https://i.pinimg.com/564x/fd/4c/71/fd4c7151cf33b7609a0543ebdbf78845.jpg", "You are in the harbor. You can see blue water, fishes and wannabe pirates.");
+        const boat = new Location("Boat", "https://ae01.alicdn.com/kf/HTB1Ta6.PVXXXXc7XFXXq6xXFXXXv/HD-Printed-Modern-Oil-painting-Art-Wall-Pirate-Fantasy-Boat-Night-Ship-Ocean-Landscape-Picture-On.jpg_q50.jpg", "You are on a voyage to nowhere.");
+        const forest = new Location("Forest", "https://cdna.artstation.com/p/assets/images/images/012/910/872/large/clayscence-art-lee2-2.jpg", "You are in a lush and beautiful forest. Beware of the poisonous toads.");
+        const temple = new Location("Temple", "https://i.pinimg.com/originals/71/36/11/7136112921e075e93df2c579d3cdaf76.jpg", "You are in the city temple. It's filled with statues and gold ornaments.");
+        const cottage = new Location("Cottage", "https://cdnb.artstation.com/p/assets/images/images/014/908/151/large/alan-campos-cottage-full-shot-render-03.jpg", "You are at an old cottage with a smoking chimney.");
+        const mountain = new Location("Mountain", "https://i.pinimg.com/originals/75/a1/de/75a1de4aa7a4d594e7269d0f4cedebd9.jpg", "You are looking up on an endless mountain.");
+        city.addPath(harbor);
+        city.addPath(temple);
+        boat.addPath(harbor);
+        forest.addPath(city);
+        forest.addPath(cottage);
+        forest.addPath(mountain);
+
+        city.goHere();
+    </script>
+</body>
+</html>

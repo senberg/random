@@ -1,0 +1,23 @@
+body{
+    background: black url("images/stars.png") repeat;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+#playingField{
+    margin: -200px auto;
+    border: 5px solid black;
+    padding: 0px;
+    transform: rotateX(50deg);
+    background-image: url("images/background.png");
+    height: 1007px;
+    width: 1513px;
+    transform-style: preserve-3d;
+}
+
+#tank{
+    position: relative;
+    left: 300px;
+    top: 300px;
+    transform-style: preserve-3d;
+}

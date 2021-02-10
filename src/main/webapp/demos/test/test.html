@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test</title>
+</head>
+<body>
+    <h1 id="title">Welcome</h1>
+    <h2 id="title2">Welcome</h2>
+    <div id="test"></div>
+    <img src="https://wallpapercave.com/wp/wp2550666.jpg">
+    <script>
+
+        let x = 5;
+        //alertSomething(x);
+        //alertSomething("test");
+        //let namn = prompt("Vad heter du?");
+        //alert(namn);
+        document.write("mooooH");
+        document.write("mooooH");
+
+        function alertSomething(something){
+            alert(something);
+        }
+
+        var para = document.createElement("p");
+        var node = document.createTextNode("This is new.");
+        para.appendChild(node);
+
+        var element = document.getElementById("test");
+        element.appendChild(para);
+
+
+        var title = document.getElementById("title");
+        title.innerHTML = "New Heading";
+
+        var title2 = document.getElementById("title2");
+        title2.textContent = "test";
+
+        let tankx = 500;
+        let tanky = 100;
+        var image = document.querySelector("img");
+        image.src = "https://www.pngkey.com/png/full/964-9645727_preview-tank-top-down-sprite.png";
+        image.style.position = "absolute";
+        image.style.top = "100px";
+        image.style.left = "500px";
+        image.style.transform = "rotate(20deg)";
+
+        function leftbuttonClicked(){
+            tankx = tankx - 10;
+            image.style.left = tankx + "px";
+        }
+
+        function rightbuttonClicked(){
+            tankx = tankx + 10;
+            image.style.left = tankx + "px";
+        }
+    </script>
+    <button onclick="leftbuttonClicked()">LEFT</button>
+    <button onclick="rightbuttonClicked()">RIGHT</button>
+</body>
+</html>

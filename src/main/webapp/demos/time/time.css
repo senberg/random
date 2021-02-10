@@ -1,0 +1,81 @@
+body{
+    background-color: #000d1a;
+    letter-spacing: .05rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,.8), 0 8px 16px rgba(0,0,0,.6);
+    color: #fff;
+    font-family: Eurostile Extd,Source Sans Pro,sans-serif;
+    font-weight: 700;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none; /* supported by Chrome and Opera */
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+.content{
+    width: 818px;
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.mainlogo{
+    display: inline-block;
+    margin:25px 0;
+    text-align: left;
+}
+h1{
+    font-size: 3.5rem;
+    margin:0px;
+    text-shadow: 0 0 4px rgba(153,204,255,.8);
+}
+h2{
+    font-size: 1.6rem;
+    margin:0px;
+    line-height: 1rem;
+    text-shadow: 0 0 2px rgba(153,204,255,.8);
+}
+
+.pagedivider{
+    margin: 3px 4px;
+    border-top: 2px solid rgba(18,75,132, 0.9);
+}
+
+table{
+    text-align: left;
+}
+td{
+    padding: 0
+}
+.rectanglelink{
+    display: block;
+    box-sizing: border-box;
+    height: 250px;
+    width: 400px;
+    cursor: no-drop;
+    box-shadow: inset 0 0 0 2px rgba(255,64,64,.2), inset 0 0 30px rgba(255,0,0,.6);
+    transition: box-shadow .2s;
+    font-size: 1.4rem;
+    padding: 210px 0 0 20px;
+    margin: 3px;
+    color: #fff;
+    text-decoration: none;
+    transition: filter .2s,transform .2s;
+}
+.rectanglelink.active{
+    box-shadow: inset 0 0 0 2px rgba(153,204,255,.2), inset 0 0 40px rgba(0,102,204,.6);
+    cursor: pointer;
+}
+.rectanglelink:hover{
+    filter: brightness(1.2);
+}
+
+footer{
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+footer span{
+    font-size: 0.8rem;
+}
