@@ -1,4 +1,4 @@
-package senberg.askellon;
+package senberg.random;
 
 import org.eclipse.jetty.http.HttpVersion;
 import org.eclipse.jetty.server.*;
@@ -13,7 +13,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class AskellonSecured {
+public class RandomSecured {
     public static void main(String[] args) throws Exception {
         Path keystorePath = Paths.get("src/main/resources/keystore.jks");
         checkExists(keystorePath);

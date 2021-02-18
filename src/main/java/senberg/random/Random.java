@@ -1,4 +1,4 @@
-package senberg.askellon;
+package senberg.random;
 
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.handler.ContextHandler;
@@ -8,7 +8,7 @@ import org.eclipse.jetty.util.resource.Resource;
 
 import java.nio.file.Paths;
 
-public class Askellon {
+public class Random {
     public static void main(String[] args) throws Exception {
         ResourceHandler resourceHandler = new ResourceHandler();
         resourceHandler.setDirectoriesListed(false);

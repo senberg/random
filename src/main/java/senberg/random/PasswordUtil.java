@@ -1,4 +1,4 @@
-package senberg.askellon;
+package senberg.random;
 
 import org.eclipse.jetty.util.security.Password;
 
